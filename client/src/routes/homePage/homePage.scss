@@ -1,0 +1,109 @@
+@import "../../styles/responsive.scss";
+
+.homepage {
+  display: flex;
+  height: 100%;
+
+  .textContainer {
+    flex: 3;
+
+    .textWrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+      height: 100%;
+
+      @include lg {
+        padding-right: 0px;
+      }
+
+      @include sm {
+        justify-content: flex-start;
+      }
+
+      .title {
+        font-size: 50px;
+
+        @include lg {
+          font-size: 40px;
+        }
+
+        @include md {
+          font-size: 30px;
+        }
+      }
+      p {
+        padding: 3px;
+        margin-top: 20px;
+        width: 80%;
+        font-size: 20px;
+        line-height: 30px;
+
+        @include md {
+          font-size: 15px;
+          line-height: 20px;
+          width: 100%;
+        }
+
+        @include sm {
+          font-size: 15px;
+          line-height: 20px;
+        }
+      }
+
+      .boxes {
+        display: flex;
+        justify-content: space-between;
+
+        @include lg {
+          width: 80%;
+        }
+
+        @include sm {
+          display: none;
+        }
+
+        h1 {
+          font-size: 36px;
+
+          @include lg {
+            font-size: 20px;
+          }
+        }
+
+        h2 {
+          font-size: 20px;
+          font-weight: 300;
+
+          @include lg {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  .imgContainer {
+    flex: 2;
+
+    @include md {
+      flex: 0;
+    }
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 115%;
+      position: absolute;
+      z-index: -1;
+      right: 0;
+
+      @include semilarge {
+        display: none;
+      }
+    }
+  }
+}

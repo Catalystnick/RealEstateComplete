@@ -1,0 +1,225 @@
+@import "../../styles/responsive.scss";
+
+.singlePage {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .details {
+    flex: 3;
+    height: 100%;
+    overflow-y: scroll;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
+    .detailsWrapper {
+      padding-right: 50px;
+
+      @include lg {
+        padding-right: 20px;
+      }
+
+      @include md {
+        padding-right: 0px;
+      }
+
+      .info {
+        margin-top: 20px;
+        .top {
+          display: flex;
+          justify-content: space-between;
+
+          @include sm {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h1 {
+              font-weight: 400;
+            }
+            .address {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              color: #888;
+              font-size: 14px;
+            }
+
+            .price {
+              padding: 10px;
+              background: rgb(110, 169, 221);
+              width: max-content;
+              border-radius: 8px;
+              color: white;
+              font-size: 20px;
+              font-weight: 300;
+            }
+          }
+          .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 50px;
+            border-radius: 10px;
+            background-color: rgb(110, 169, 221);
+            color: white;
+            font-weight: 600;
+
+            @include sm {
+              padding: 20px 50px;
+            }
+
+            span {
+              font-size: 18px;
+            }
+
+            img {
+              width: 100px;
+              height: 100px;
+              padding: 2px;
+              background-color: #fff;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
+        .bottom {
+          margin-top: 50px;
+          color: #555;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .features {
+    flex: 2;
+    overflow-y: scroll;
+    scrollbar-color: rgba(110, 169, 221, 1) white;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    background: rgb(110, 169, 221);
+    background: linear-gradient(
+      120deg,
+      rgba(146, 192, 232, 1) 3%,
+      rgba(175, 210, 240, 1) 14%,
+      rgba(178, 212, 240, 1) 100%
+    );
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
+
+    .featuresWrapper {
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      @include md {
+        padding: 20px;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .featureText {
+          span {
+            font-weight: bold;
+          }
+          p {
+            font-style: 14px;
+          }
+        }
+      }
+      .listVertical {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+      .listHorizontal {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .sizeContainer {
+        display: flex;
+        justify-content: space-between;
+
+        @include lg {
+          font-size: 12px;
+        }
+
+        .size {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: white;
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+
+      .mapContainer {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          padding: 15px;
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          gap: 5px;
+          background-color: white;
+          border: 1px solid rgb(110, 169, 221);
+          border-radius: 10px;
+
+          &:hover {
+            cursor: pointer;
+            transition: all 0.4s ease;
+            scale: 1.05;
+            color: white;
+            background-color: rgb(110, 169, 221);
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+}

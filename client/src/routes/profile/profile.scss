@@ -1,0 +1,113 @@
+@import "../../styles/responsive.scss";
+
+.profilePage {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    overflow-y: scroll;
+    scrollbar-color: rgb(110, 169, 221) white;
+    padding: 50px;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .detailsWrapper {
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      @include sm {
+        padding-right: 0;
+      }
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-weight: 300;
+        }
+
+        button {
+          padding: 12px 24px;
+          font-size: 15px;
+          font-weight: 600;
+          background-color: rgb(110, 169, 221);
+          border: none;
+          color: white;
+          cursor: pointer;
+
+          &:hover {
+            scale: 1.05;
+            transition: all 0.4s ease;
+          }
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+        button {
+          width: 100px;
+          background-color: teal;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 10px;
+          color: white;
+          cursor: pointer;
+
+          &:hover {
+            transition: all 0.4s ease;
+            scale: 1.02;
+          }
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .chatContainer {
+    flex: 2;
+    height: 100%;
+    scrollbar-color: rgba(110, 169, 221, 1) white;
+    background: rgb(110, 169, 221);
+    background: linear-gradient(
+      120deg,
+      rgba(146, 192, 232, 1) 3%,
+      rgba(175, 210, 240, 1) 14%,
+      rgba(178, 212, 240, 1) 100%
+    );
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .chatContainerWrapper {
+      padding: 0px 20px;
+      height: 100%;
+    }
+  }
+}

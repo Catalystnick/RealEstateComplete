@@ -1,0 +1,142 @@
+@import "../../styles/responsive.scss";
+.searchBar {
+  @include sm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .type {
+    margin-left: 8px;
+
+    @include sm {
+      margin-bottom: 5px;
+      display: flex;
+      width: 80%;
+      justify-content: center;
+      padding: 0px 10px;
+      margin-left: 0px;
+    }
+
+    @include md {
+      width: fit-content;
+    }
+
+    button {
+      padding: 16px 36px;
+      border: 1px solid #999;
+      background-color: white;
+      text-transform: capitalize;
+      border-bottom: none;
+
+      &.active {
+        background-color: #afd2f0;
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+
+        @include sm {
+          border-bottom: 1px solid gray;
+        }
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+
+        @include sm {
+          border-bottom: 1px solid gray;
+        }
+      }
+    }
+  }
+
+  form {
+    border: 1px solid #999;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    height: 64px;
+    gap: 5px;
+
+    @include lg {
+      width: 80%;
+    }
+    @include sm {
+      flex-direction: column;
+      border: none;
+    }
+    input {
+      border: none;
+      padding: 0px 10px;
+      width: 180px;
+
+      @include lg {
+        padding: 0px 5px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 140px;
+        }
+
+        @include md {
+          width: auto;
+          &:nth-child(2),
+          &:nth-child(3) {
+            width: auto;
+          }
+        }
+        @include sm {
+          padding: 20px;
+          border: 1px solid black;
+        }
+      }
+
+      &:focus {
+        border: 2px solid black;
+        outline: none;
+        border-radius: 5px;
+      }
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+
+      button {
+        width: 50px;
+        background: transparent;
+        border: none;
+
+        @include sm {
+          background: rgb(110, 169, 221);
+          background: linear-gradient(
+            126deg,
+            rgba(110, 169, 221, 1) 56%,
+            rgba(175, 210, 240, 1) 75%,
+            rgba(178, 212, 240, 1) 100%
+          );
+
+          width: 100%;
+          padding: 10px;
+        }
+
+        &:hover {
+          scale: 1.2;
+          transition: all 0.5s ease-in-out;
+          cursor: pointer;
+
+          @include sm {
+            &:hover {
+              scale: 1.05;
+              transition: all 0.5s ease-in-out;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
